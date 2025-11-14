@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Professional Site for AdSense</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="clock-container">
+            <div id="digital-clock">00:00:00 AM</div>
+            <div id="country-detail">Your Local Time</div>
+        </div>
+        <nav class="menu">
+            <a href="#home" class="menu-item active">Home</a>
+            <a href="#articles" class="menu-item">Articles</a>
+            <a href="#excel" class="menu-item">Excel Formulas (250+)</a>
+            <a href="#calendar" class="menu-item">World Calendar</a>
+            <a href="#games" class="menu-item">Mind Fresh Games (5)</a>
+            <a href="#" class="menu-item" onclick="openPageModal('about')">About Us</a>
+            <a href="#" class="menu-item" onclick="openPageModal('contact')">Contact Us</a>
+            <a href="#" class="menu-item" onclick="openPageModal('privacy')">Privacy Policy</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div id="home" class="page active">
+            <h1>Welcome, Let's Get Started!</h1>
+            <p class="description">
+                This website offers simple, easy-to-understand articles on technology, software tips, and essential guides. Our goal is to provide high-value content to help you learn and grow.
+            </p>
+            <h3>Featured Articles</h3>
+            <div class="article-grid">
+                <div class="article-card" onclick="openArticleModal('article1')">
+                    <h4>5 Simple Tricks to Speed Up Your Computer</h4>
+                    <p>Read the full article and easy steps to optimize your PC...</p>
+                </div>
+                <div class="article-card" onclick="openArticleModal('article2')">
+                    <h4>The Ultimate Guide to Mastering VLOOKUP in Excel</h4>
+                    <p>Click here to read the full article...</p>
+                </div>
+                <div class="article-card" onclick="openArticleModal('article3')">
+                    <h4>10 Essential Keyboard Shortcuts That Boost Productivity</h4>
+                    <p>Click here to read the full article...</p>
+                </div>
+                <div class="article-card" onclick="openArticleModal('article4')">
+                    <h4>How to Choose the Right Laptop for Students</h4>
+                    <p>Click here to read the full article...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="articles" class="page">
+            <h2>All Articles (15)</h2>
+            <p>Click on any article to read the full content. (Articles 11-15 need your unique content for AdSense approval!)</p>
+            <div class="article-list">
+                <div class="article-list-item" onclick="openArticleModal('article1')">
+                    <strong>Article 1: 5 Simple Tricks to Speed Up Your Computer</strong>
+                    <span>(COMPLETE) Must-read tips for PC optimization.</span>
+                </div>
+                <div class="article-list-item" onclick="openArticleModal('article2')">
+                    <strong>Article 2: The Ultimate Guide to Mastering VLOOKUP in Excel</strong>
+                    <span>(COMPLETE) Detailed guide on Excel's most useful function.</span>
+                </div>
+                 <div class="article-list-item" onclick="openArticleModal('article3')">
+                    <strong>Article 3: 10 Essential Keyboard Shortcuts That Boost Productivity</strong>
+                    <span>(COMPLETE) Master these shortcuts to save time every day.</span>
+                </div>
+                <div class="article-list-item" onclick="openArticleModal('article4')">
+                    <strong>Article 4: How to Choose the Right Laptop for Students</strong>
+                    <span>(COMPLETE) A complete guide to budget and specs for students.</span>
+                </div>
+                <div class="article-list-item" onclick="openArticleModal('article5')">
+                    <strong>Article 5: Understanding Internet Speed: Mbps vs. MBps Explained</strong>
+                    <span>(COMPLETE) Why your download speeds never match your plan.</span>
+                </div>
+                 <div class="article-list-item" onclick="openArticleModal('article6')">
+                    <strong>Article 6: A Beginner's Guide to Web Hosting and Domains</strong>
+                    <span>(COMPLETE) What you need to get online easily.</span>
+                </div>
+                 <div class="article-list-item" onclick="openArticleModal('article7')">
+                    <strong>Article 7: Easy Ways to Fix Common Mobile Phone Battery Issues</strong>
+                    <span>(COMPLETE) Simple tips for maximizing battery life.</span>
+                </div>
+                 <div class="article-list-item" onclick="openArticleModal('article8')">
+                    <strong>Article 8: Introduction to HTML: The Backbone of the Web</strong>
+                    <span>(COMPLETE) Understanding tags and basic web structure.</span>
+                </div>
+                <div class="article-list-item" onclick="openArticleModal('article9')">
+                    <strong>Article 9: Simple Steps to Secure Your Home Wi-Fi Network</strong>
+                    <span>(COMPLETE) Essential tips for Wi-Fi encryption and safety.</span>
+                </div>
+                <div class="article-list-item" onclick="openArticleModal('article10')">
+                    <strong>Article 10: Troubleshooting: Why is My Printer Not Printing?</strong>
+                    <span>(COMPLETE) The most common and easy printer fixes.</span>
+                </div>
+                <div class="article-list-item" onclick="openArticleModal('article11')">
+                    <strong>Article 11: Best Practices for Managing Your Digital Photos</strong>
+                    <span>(NEEDS CONTENT) **Write 5-7 lines per heading!**</span>
+                </div>
+                 <div class="article-list-item" onclick="openArticleModal('article12')">
+                    <strong>Article 12: 5 Free Software Tools Every Freelancer Needs</strong>
+                    <span>(NEEDS CONTENT) **Write 5-7 lines per heading!**</span>
+                </div>
+                 <div class="article-list-item" onclick="openArticleModal('article13')">
+                    <strong>Article 13: Understanding Computer RAM vs. Storage (Hard Drive)</strong>
+                    <span>(NEEDS CONTENT) **Write 5-7 lines per heading!**</span>
+                </div>
+                 <div class="article-list-item" onclick="openArticleModal('article14')">
+                    <strong>Article 14: Setting Up Your First Email Account (Gmail/Outlook)</strong>
+                    <span>(NEEDS CONTENT) **Write 5-7 lines per heading!**</span>
+                </div>
+                 <div class="article-list-item" onclick="openArticleModal('article15')">
+                    <strong>Article 15: Common Smartphone Scams and How to Avoid Them</strong>
+                    <span>(NEEDS CONTENT) **Write 5-7 lines per heading!**</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="excel" class="page">
+            <h2>Excel Formulas (50 Complete + 200 Placeholders)</h2>
+            <p>Click on any formula name to see details and usage. **(50 formulas are complete and linked.)**</p>
+            <div id="formula-list" class="formula-list">
+                </div>
+        </div>
+
+        <div id="calendar" class="page">
+            <h2>World Calendar & Occasions Finder</h2>
+            
+            <div class="calendar-controls">
+                <button id="prev-month-btn">← Previous Month</button>
+                <h3 id="calendar-title">Month Year</h3>
+                <button id="next-month-btn">Next Month →</button>
+            </div>
+            
+            <div class="date-finder-section">
+                <h4>🔎 Search Occasions Online</h4>
+                <p class="status-message">Enter Country Name, City, or Holiday name to find occasions.</p>
+                <input type="text" id="occasion-search-input" placeholder="e.g., Pakistan National Holidays November 2025">
+                <button id="search-occasion-btn">Search Occasions Online</button>
+                <p id="search-status" class="status-message">Showing general holidays found online.</p>
+                
+                <hr>
+
+                <h4>🗓️ Highlight Manual Occasion (Local)</h4>
+                <p class="status-message">Use this to add a personal date to the calendar.</p>
+                <input type="text" id="occasion-date-input" placeholder="Date (e.g., 2025-11-20)">
+                <input type="text" id="occasion-name-input" placeholder="Occasion Name (e.g., Birthday)">
+                <button id="add-occasion-btn">Add Occasion</button>
+                <p id="occasion-status" class="status-message">Dates will highlight in Green (Upcoming) or Red (Past).</p>
+            </div>
+
+            <table class="calendar-table">
+                <thead>
+                    <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+                </thead>
+                <tbody id="calendar-body">
+                    </tbody>
+            </table>
+        </div>
+
+        <div id="games" class="page">
+            <h2>Mind Fresh Games (5 Working Games)</h2>
+            <div class="game-menu">
+                <button class="game-tab active" onclick="showGame('tictactoe')">Tic-Tac-Toe (Vs. Computer)</button>
+                <button class="game-tab" onclick="showGame('brick-breaker')">Brick Breaker (Colorful)</button>
+                <button class="game-tab" onclick="showGame('maze-game')">Maze Game (Random/Hard)</button>
+                <button class="game-tab" onclick="showGame('snake')">Snake Game (Working)</button>
+                <button class="game-tab" onclick="showGame('memory')">Memory Match (Working)</button>
+            </div>
+            
+            <div id="game-container">
+                <div id="tictactoe" class="game-content active">
+                    <h3>Tic-Tac-Toe (Guest 'X' vs. Computer 'O')</h3>
+                    <div id="tictactoe-board">
+                        <div class="cell" data-index="0"></div><div class="cell" data-index="1"></div><div class="cell" data-index="2"></div>
+                        <div class="cell" data-index="3"></div><div class="cell" data-index="4"></div><div class="cell" data-index="5"></div>
+                        <div class="cell" data-index="6"></div><div class="cell" data-index="7"></div><div class="cell" data-index="8"></div>
+                    </div>
+                    <button id="reset-game">Restart Game</button>
+                    <p id="tictactoe-status">Player Guest's turn</p>
+                </div>
+
+                <div id="brick-breaker" class="game-content">
+                    <h3>Brick Breaker / Arkanoid Clone (Colorful)</h3>
+                    <p>Use Left/Right Arrow Keys to control the paddle. Break all bricks to win!</p>
+                    <canvas id="brick-canvas" width="500" height="400"></canvas>
+                    <p id="brick-game-status">Score: 0 | Lives: 3</p>
+                </div>
+
+                <div id="maze-game" class="game-content">
+                    <h3>Random Maze Solver (Use Arrow Keys to Move)</h3>
+                    <p>Find your way from the top-left (blue circle) to the bottom-right (red square)!</p>
+                    <canvas id="maze-canvas" width="450" height="450"></canvas>
+                    <p id="maze-status">Use Arrow Keys to move. Hit wall? Try again!</p>
+                </div>
+                
+                <div id="snake" class="game-content">
+                    <h3>Snake Game (Use Arrow Keys to Control)</h3>
+                    <p>Eat the red dots to grow longer. Don't hit the walls or yourself! </p>
+                    <canvas id="snake-canvas" width="300" height="300"></canvas>
+                    <p id="snake-score">Score: 0</p>
+                </div>
+
+                 <div id="memory" class="game-content">
+                    <h3>Memory Match / Card Flip Game</h3>
+                    <p>Match all the pairs before time runs out! (Click to start)</p>
+                    <p id="memory-status">Time: 60s | Matches: 0</p>
+                    <div id="memory-board">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="hidden">
+        <div id="modal-popup">
+            <div id="modal-header">
+                <h2 id="modal-title"></h2>
+                <button id="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modal-content">
+                </div>
+            <div id="modal-footer">
+                <button id="modal-back" onclick="closeModal()">Close Page</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="formula-modal-overlay" class="hidden">
+        <div id="formula-modal-popup">
+            <div class="modal-header">
+                <h2 id="formula-modal-title"></h2>
+                <button class="modal-close" onclick="closeFormulaModal()">&times;</button>
+            </div>
+            <div id="formula-modal-content">
+                <p><strong>Syntax:</strong> <code id="formula-syntax"></code></p>
+                <p><strong>Description:</strong></p>
+                <p id="formula-description"></p>
+                <p><strong>Example:</strong></p>
+                <p id="formula-example"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="copy-formula-btn">Copy Formula</button>
+                <button onclick="closeFormulaModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="occasion-modal-overlay" class="hidden">
+        <div id="occasion-modal-popup">
+            <div class="modal-header">
+                <h2 id="occasion-modal-title"></h2>
+                <button class="modal-close" onclick="closeOccasionModal()">&times;</button>
+            </div>
+            <div id="occasion-modal-content">
+                </div>
+            <div class="modal-footer">
+                <button onclick="closeOccasionModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
