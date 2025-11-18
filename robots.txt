@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://samimajroh.github.io/WorldNex/sitemap-1.xml
+Sitemap: https://samimajroh.github.io/WorldNex/final-sitemap.xml/
+
