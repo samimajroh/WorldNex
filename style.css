@@ -607,9 +607,9 @@ p.description {
     opacity: 0.8;
 
 }
-/* FINAL MOBILE PORTRAIT FIX FOR SMALLER SCREENS */
+/* --- FINAL MOBILE PORTRAIT FIX (RESPONSIVENESS) --- */
 @media screen and (max-width: 600px) {
-    /* Main Layout Adjustments */
+    /* 1. Main Layout Adjustment: Forces elements to stack vertically */
     .container {
         flex-direction: column !important; 
         width: 100% !important;
@@ -617,29 +617,34 @@ p.description {
         margin: 0;
     }
 
-    /* Sidebar/Navigation Adjustment */
+    /* 2. Sidebar/Navigation Adjustment: Hides the sidebar completely on mobile */
     .sidebar, .nav-menu {
-        width: 100%; 
-        height: auto; 
-        min-width: 100%; 
-        padding: 10px 0;
-        box-sizing: border-box; 
-        overflow-x: hidden;
+        display: none !important; /* This makes the menu disappear for full content space */
+        width: 100%;
+        height: auto;
     }
     
-    /* Content Area Adjustment */
+    /* 3. Content Area Adjustment: Content takes up the full screen width */
     .content, .main-section {
         width: 100% !important;
         min-width: 100% !important;
-        padding: 10px;
-        order: 2;
+        padding: 15px; /* Gives some breathing room */
+        order: 1; /* Ensures content is seen first */
     }
 
-    /* Article cards/grid Adjustment */
+    /* 4. Article cards/grid Adjustment */
     .article-grid, .article-card {
         display: block !important;
-        width: 100% !important;
-        margin-left: 0;
-        margin-right: 0;
+        width: 95% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 5. Headings Adjustment for smaller screens */
+    h1 {
+        font-size: 1.8em !important;
+    }
+    h2 {
+        font-size: 1.4em !important;
     }
 }
