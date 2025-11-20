@@ -606,46 +606,35 @@ p.description {
 }
 #copy-formula-btn:hover {
     opacity: 0.8;
-
+    }
 }
-/* --- FINAL MOBILE PORTRAIT FIX (RESPONSIVENESS) --- */
-@media screen and (max-width: 600px) {
-    /* 1. Main Layout Adjustment: Forces elements to stack vertically */
-    .container {
-        flex-direction: column !important; 
-        width: 100% !important;
-        padding: 0;
-        margin: 0;
+/* MOBILE RESPONSIVENESS FIX FOR SMALL SCREENS */
+@media screen and (max-width: 768px) {
+    /* 1. Main container ko poori chaurai do */
+    .article-grid, .content, .main-section {
+        flex-direction: column !important; /* Items ko seedha karo */
+        width: 100% !important; 
+        padding: 10px !important;
+        margin: 0 !important;
     }
 
-    /* 2. Sidebar/Navigation Adjustment: Hides the sidebar completely on mobile */
+    /* 2. Side Menu (Agar hai toh) chupa do ya chhota karo */
     .sidebar, .nav-menu {
-        display: none !important; /* This makes the menu disappear for full content space */
         width: 100%;
         height: auto;
+        overflow-x: hidden;
     }
     
-    /* 3. Content Area Adjustment: Content takes up the full screen width */
-    .content, .main-section {
-        width: 100% !important;
-        min-width: 100% !important;
-        padding: 15px; /* Gives some breathing room */
-        order: 1; /* Ensures content is seen first */
+    /* 3. Article cards ko theek karo */
+    .article-card {
+        width: 95% !important; 
+        margin-bottom: 20px;
     }
 
-    /* 4. Article cards/grid Adjustment */
-    .article-grid, .article-card {
-        display: block !important;
-        width: 95% !important;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* 5. Headings Adjustment for smaller screens */
-    h1 {
-        font-size: 1.8em !important;
-    }
-    h2 {
-        font-size: 1.4em !important;
+    /* 4. Headings choti karo */
+    h1, h2 {
+        font-size: 1.5em !important;
+        padding: 5px;
     }
 }
+
