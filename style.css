@@ -610,23 +610,7 @@ p.description {
 }
 /* --- FINAL MOBILE PORTRAIT FIX (RESPONSIVENESS) --- */
 @media screen and (max-width: 600px) {
-    
-    /* 1. Sidebar/Navigation Adjustment: Menu stacks horizontally on top */
-    .sidebar, .nav-menu {
-        width: 100% !important; 
-        min-width: 100% !important; 
-        padding: 5px 10px;
-        box-sizing: border-box; /* Ensures padding/border don't break the width */
-        height: auto;
-        overflow-x: auto; /* Allows horizontal scrolling if the menu is very long */
-        order: 1; /* Puts the menu at the very top */
-        display: flex; /* Ensures items are side-by-side */
-        justify-content: space-around; /* Spreads the menu items out */
-        text-align: center;
-        margin: 0;
-    }
-    
-    /* 2. Main Container Adjustment */
+    /* 1. Main Layout Adjustment: Forces elements to stack vertically */
     .container {
         flex-direction: column !important; 
         width: 100% !important;
@@ -634,12 +618,19 @@ p.description {
         margin: 0;
     }
 
+    /* 2. Sidebar/Navigation Adjustment: Hides the sidebar completely on mobile */
+    .sidebar, .nav-menu {
+        display: none !important; /* This makes the menu disappear for full content space */
+        width: 100%;
+        height: auto;
+    }
+    
     /* 3. Content Area Adjustment: Content takes up the full screen width */
     .content, .main-section {
         width: 100% !important;
         min-width: 100% !important;
-        padding: 15px; 
-        order: 2; /* Content goes below the menu */
+        padding: 15px; /* Gives some breathing room */
+        order: 1; /* Ensures content is seen first */
     }
 
     /* 4. Article cards/grid Adjustment */
@@ -650,7 +641,7 @@ p.description {
         margin-right: auto;
     }
 
-    /* 5. Heading sizes adjusted for mobile */
+    /* 5. Headings Adjustment for smaller screens */
     h1 {
         font-size: 1.8em !important;
     }
