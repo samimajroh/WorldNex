@@ -637,51 +637,45 @@ p.description {
         padding: 5px;
     }
 }
-/* --- FINAL MOBILE PORTRAIT FIX (RESPONSIVENESS) --- */
+/* === EMERGENCY MOBILE LAYOUT FIX === */
 @media screen and (max-width: 600px) {
-    .sidebar, .nav-menu {
-        width: 100% !important; 
-        min-width: 100% !important; 
-        padding: 5px 10px;
-        box-sizing: border-box; 
-        height: auto;
-        overflow-x: auto;
-        order: 1;
-        display: flex;
-        justify-content: space-around;
-        text-align: center;
-        margin: 0;
-    }
+
+    /* Container ko vertical stack karein */
     .container {
-        flex-direction: column !important; 
+        flex-direction: column !important;
         width: 100% !important;
         padding: 0;
         margin: 0;
     }
-    .content, .main-section {
+    
+    /* Menu/Sidebar ko display karein aur theek se wrap karein */
+    .sidebar, .nav-menu {
         width: 100% !important;
         min-width: 100% !important;
-        padding: 15px; 
-        order: 2;
+        height: auto !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        order: 1 !important;
+        padding: 10px 5px;
+        box-sizing: border-box;
     }
-    .article-grid, .article-card {
+    
+    /* Content ko force karein ke woh poori screen le aur Menu ke neeche aaye */
+    .content, .main-section {
         display: block !important;
-        width: 95% !important;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100% !important;
+        min-width: 100% !important;
+        order: 2 !important;
+        padding: 15px;
     }
-}
-/* Custom FAQ Styling for SEO */
-.faq-box {
-    margin-top: 30px;
-    padding: 20px;
-    border: 1px solid #e0e0e0; 
-    border-radius: 8px; 
-    background-color: #f9f9f9; 
-}
-.faq-box h3 {
-    color: #007bff; 
-    border-bottom: 2px solid #007bff; 
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    
+    /* Article Grid ko theek karein */
+    .article-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+    .article-card {
+        width: 95% !important;
+        margin: 10px auto !important;
+    }
 }
