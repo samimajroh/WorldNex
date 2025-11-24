@@ -609,11 +609,25 @@ p.description {
 }
 /* === MOBILE LAYOUT OVERRIDE FIX === */
 @media screen and (max-width: 600px) {
-    /* CRITICAL FIX: Forces the body to stack items vertically instead of side-by-side */
+    /* CRITICAL FIX 1: Forces the body to stack items vertically and handles overflow */
     body {
         display: block !important;
+        overflow-x: hidden !important; /* Prevents horizontal scrolling */
     }
-    
+
+    /* CRITICAL FIX 2: Removes sticky/fixed positioning from the sidebar */
+    .sidebar {
+        position: relative !important; /* Removes 'sticky' property */
+        width: 100% !important;
+        min-width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        order: 1 !important; /* Menu will appear first */
+        padding: 10px 5px;
+        box-shadow: none !important; /* Optional: Makes it look cleaner on mobile */
+    }
+
     /* Container must stack vertically */
     .container {
         flex-direction: column !important;
@@ -622,20 +636,8 @@ p.description {
         margin: 0;
     }
     
-    /* Menu/Sidebar must take full width */
-    .sidebar, .nav-menu {
-        width: 100% !important;
-        min-width: 100% !important;
-        height: auto !important;
-        display: flex !important;
-        flex-wrap: wrap !important;
-        order: 1 !important;
-        padding: 10px 5px;
-        box-sizing: border-box;
-    }
-    
     /* Content must take full width and appear below the menu */
-    .content, .main-section {
+    .main-content { /* Changed from .content, .main-section to match your HTML */
         display: block !important;
         width: 100% !important;
         min-width: 100% !important;
@@ -643,6 +645,25 @@ p.description {
         padding: 15px;
     }
     
+    /* Menu items to display nicely */
+    .menu {
+        flex-direction: row !important; /* Items in a row */
+        flex-wrap: wrap !important;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .menu-item {
+        flex-grow: 1; /* Helps items fill space */
+        text-align: center;
+        margin: 5px;
+    }
+    
+    /* Hide the clock on mobile for cleanliness */
+    .clock-container {
+        display: none !important;
+    }
+
     /* Article Grid fix */
     .article-grid {
         display: block !important;
