@@ -1,59 +1,63 @@
-
-/* Basic Setup & Theme */
 :root {
-    --bg-color: #1a1a1a;
-    --sidebar-bg: #101010;
-    --primary-color: #00aaff;
-    --text-color: #e0e0e0;
-    --text-muted: #888;
-    --card-bg: #252525;
-    --hover-color: #333;
-    --shadow-light: rgba(0, 170, 255, 0.2);
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --sidebar-bg: #1e1e1e;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --highlight-color: #00bcd4;
+    --active-color: #0056b3;
 }
 
+/* Base Styles */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    display: flex;
+    display: flex; /* CRITICAL for Desktop Side-by-Side */
     min-height: 100vh;
 }
 
-/* -------------------- SIDEBAR AND NAVIGATION -------------------- */
+/* Container and Sidebar */
+.container {
+    display: flex;
+    width: 100%;
+}
+
 .sidebar {
-    width: 250px;
+    width: 250px; /* CRITICAL for Desktop width */
     background-color: var(--sidebar-bg);
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
-    position: sticky; 
+    position: sticky; /* CRITICAL for Desktop sticky menu */
     top: 0;
+    height: 100vh; /* Full height on desktop */
+    min-height: 100%;
 }
 
 .clock-container {
     text-align: center;
-    margin-bottom: 30px;
-    padding: 10px;
-    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--secondary-color);
+    margin-bottom: 20px;
 }
 
 #digital-clock {
-    font-size: 2.2em;
+    font-size: 2.5em;
     font-weight: bold;
-    color: var(--primary-color);
-    text-shadow: 0 0 5px var(--shadow-light);
+    color: var(--highlight-color);
 }
 
 #country-detail {
     font-size: 0.8em;
-    color: var(--text-muted);
+    color: var(--secondary-color);
     margin-top: 5px;
 }
 
@@ -65,59 +69,58 @@ body {
 .menu-item {
     padding: 12px 15px;
     margin: 5px 0;
-    text-decoration: none;
     color: var(--text-color);
-    border-radius: 6px;
-    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .menu-item:hover {
-    background-color: var(--hover-color);
-    color: var(--primary-color);
+    background-color: #2a2a2a;
 }
 
 .menu-item.active {
     background-color: var(--primary-color);
-    color: var(--sidebar-bg);
     font-weight: bold;
 }
 
-/* -------------------- MAIN CONTENT AREA -------------------- */
+/* Main Content Area */
 .main-content {
-    flex-grow: 1;
-    padding: 30px;
+    flex-grow: 1; /* CRITICAL for Desktop: Takes up the remaining space */
+    padding: 20px;
     overflow-y: auto;
+    max-width: calc(100% - 250px); /* Desktop max width to keep space from sidebar */
 }
 
 .page {
     display: none;
-    padding-bottom: 50px; 
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .page.active {
     display: block;
 }
 
-h1 {
-    color: var(--primary-color);
-    font-size: 2.5em;
-    margin-bottom: 10px;
+h1, h2, h3 {
+    color: var(--highlight-color);
+    margin-bottom: 15px;
 }
 
-h2 {
-    color: var(--text-color);
-    border-bottom: 2px solid var(--text-muted);
-    padding-bottom: 5px;
+p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.description {
+    color: var(--secondary-color);
+    font-style: italic;
     margin-bottom: 20px;
 }
 
-p.description {
-    font-size: 1.1em;
-    color: var(--text-muted);
-    margin-bottom: 30px;
-}
-
-/* Article Grid (Home Page) */
+/* Article Grid */
 .article-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -126,8 +129,8 @@ p.description {
 }
 
 .article-card {
-    background-color: var(--card-bg);
-    padding: 20px;
+    background-color: #2a2a2a;
+    padding: 15px;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -135,336 +138,255 @@ p.description {
 }
 
 .article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-}
-
-.article-card h4 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.article-card p {
-    color: var(--text-muted);
-    font-size: 0.9em;
-}
-
-/* Article List (Articles Page) */
-.article-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
 .article-list-item {
-    background-color: var(--card-bg);
+    background-color: #2a2a2a;
     padding: 15px;
-    border-radius: 6px;
+    border-radius: 5px;
+    margin-bottom: 10px;
     cursor: pointer;
-    transition: background-color 0.2s;
-    border-left: 3px solid transparent;
+    border-left: 3px solid var(--highlight-color);
+    display: flex;
+    flex-direction: column;
 }
-
 .article-list-item:hover {
-    background-color: var(--hover-color);
-    border-left: 3px solid var(--primary-color);
+    background-color: #333;
 }
-
-.article-list-item strong {
-    color: var(--text-color);
-    display: block;
-    margin-bottom: 5px;
-}
-
 .article-list-item span {
     font-size: 0.8em;
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    margin-top: 5px;
 }
 
-/* Formula List (Excel Page) */
+/* Formula List */
 .formula-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 10px;
     margin-top: 20px;
 }
 
 .formula-item {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    padding: 8px 15px;
-    border-radius: 4px;
+    background-color: #2a2a2a;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    font-weight: bold;
-    border: 1px solid var(--text-muted);
+    text-align: center;
+    border: 1px solid #333;
 }
-
 .formula-item:hover {
     background-color: var(--primary-color);
-    color: var(--sidebar-bg);
+    color: white;
 }
 
-.formula-item.placeholder {
-    opacity: 0.6;
-    cursor: default;
-    border: 1px dashed var(--text-muted);
-}
-.formula-item.placeholder:hover {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-}
-
-/* Calendar */
+/* Calendar Styles */
 .calendar-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    max-width: 600px;
 }
-.calendar-controls button {
-    padding: 8px 15px;
+
+#calendar-title {
+    margin: 0;
+}
+
+#prev-month-btn, #next-month-btn, #search-occasion-btn, #add-occasion-btn {
     background-color: var(--primary-color);
-    color: var(--sidebar-bg);
+    color: white;
     border: none;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
-.calendar-controls h3 {
-    margin: 0;
-    color: var(--text-color);
+
+#prev-month-btn:hover, #next-month-btn:hover, #search-occasion-btn:hover, #add-occasion-btn:hover {
+    background-color: var(--active-color);
 }
 
 .calendar-table {
     width: 100%;
-    max-width: 600px;
     border-collapse: collapse;
-    margin-top: 20px;
-    background-color: var(--card-bg);
+    margin-top: 15px;
 }
 
 .calendar-table th, .calendar-table td {
+    border: 1px solid #333;
     padding: 10px;
     text-align: center;
-    border: 1px solid var(--hover-color);
+    height: 60px;
+    width: calc(100%/7);
+    vertical-align: top;
+    cursor: default;
 }
 
 .calendar-table th {
-    background-color: var(--hover-color);
-    color: var(--primary-color);
+    background-color: #2a2a2a;
+    color: var(--highlight-color);
 }
 
-.calendar-table td.today {
-    background-color: #ff5555; 
-    color: var(--sidebar-bg);
-    font-weight: bold;
-    border: 2px solid #ff5555;
-}
-
-/* Occasions Coloring */
-.calendar-table td.occasion {
+.day-cell {
+    background-color: #1e1e1e;
     cursor: pointer;
-    font-weight: bold;
     position: relative;
+    transition: background-color 0.2s;
 }
-.calendar-table td.occasion::after {
-    content: '★';
-    position: absolute;
-    bottom: 0;
-    right: 0;
+
+.day-cell:hover {
+    background-color: #3a3a3a;
+}
+
+.current-day {
+    border: 2px solid var(--primary-color);
+    font-weight: bold;
+}
+
+.occasion-marker {
+    display: block;
     font-size: 0.7em;
-    line-height: 1;
+    color: #ffc107;
+    margin-top: 5px;
+    line-height: 1.2;
 }
 
-.calendar-table td.upcoming-occasion {
-    background-color: #55ff5530; /* Light Green */
-    color: #55ff55;
+.manual-occasion-future {
+    background-color: #28a745 !important; /* Green */
+    color: white;
 }
-.calendar-table td.upcoming-occasion::after {
-    color: #55ff55;
-}
-
-.calendar-table td.past-occasion {
-    background-color: #ff555530; /* Light Red */
-    color: #ff5555;
-}
-.calendar-table td.past-occasion::after {
-    color: #ff5555;
+.manual-occasion-past {
+    background-color: #dc3545 !important; /* Red */
+    color: white;
 }
 
 .date-finder-section {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: var(--card-bg);
-    max-width: 600px;
+    background-color: #2a2a2a;
+    padding: 15px;
     border-radius: 8px;
+    margin-bottom: 20px;
 }
-.date-finder-section input {
-    padding: 8px;
-    margin-right: 10px;
+.date-finder-section input[type="text"] {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid var(--hover-color);
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    border-radius: 4px;
-    width: 150px;
-}
-.date-finder-section button {
-    padding: 8px 15px;
-    background-color: #55ff55;
-    color: var(--sidebar-bg);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border: 1px solid #444;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
 }
 .status-message {
     font-size: 0.9em;
-    margin-top: 10px;
-    color: var(--primary-color);
-}
-.status-message.error {
-    color: #ff5555;
-    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
 }
 
-
-/* Games */
+/* Games Section */
 .game-menu {
-    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .game-tab {
-    padding: 10px 15px;
-    background-color: var(--card-bg);
-    color: var(--text-color);
+    background-color: #333;
+    color: white;
     border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s;
+}
+
+.game-tab:hover {
+    background-color: var(--secondary-color);
 }
 
 .game-tab.active {
     background-color: var(--primary-color);
-    color: var(--sidebar-bg);
-    font-weight: bold;
 }
 
-/* FIX: Ensure only the active game-content is visible */
 .game-content {
     display: none;
-    padding: 20px;
-    border: 1px solid var(--card-bg);
-    background-color: var(--hover-color);
+    padding: 15px;
+    border: 1px solid #333;
     border-radius: 8px;
+    background-color: #1e1e1e;
 }
+
 .game-content.active {
     display: block;
 }
 
-/* Tic-Tac-Toe Specific */
 #tictactoe-board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 1fr);
     width: 300px;
+    height: 300px;
     margin: 20px auto;
-    border: 3px solid var(--primary-color);
 }
-.cell {
-    border: 1px solid var(--text-muted);
+
+#tictactoe-board .cell {
+    border: 2px solid var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5em;
+    font-size: 3em;
     cursor: pointer;
-    transition: background-color 0.1s;
+    color: var(--highlight-color);
 }
-.cell:hover { background-color: var(--card-bg); }
-.cell.player-x { color: #ff5555; }
-.cell.player-o { color: #55ff55; }
+
 #reset-game {
     display: block;
-    width: 200px;
     margin: 10px auto;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: var(--sidebar-bg);
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.2s;
-}
-#reset-game:hover { background-color: #0077aa; }
-#tictactoe-status {
-    text-align: center;
-    font-size: 1.2em;
-    margin-top: 15px;
-    color: var(--text-color);
 }
 
-/* Canvas Games Specific */
-#maze-canvas, #brick-canvas, #snake-canvas {
+#brick-canvas, #maze-canvas, #snake-canvas {
     display: block;
-    border: 3px solid var(--primary-color);
-    margin: 20px auto;
-    background-color: #1a1a1a;
-}
-#snake-score, #brick-game-status {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #55ff55;
-    text-align: center;
+    margin: 10px auto;
+    border: 2px solid var(--primary-color);
+    background-color: #000;
 }
 
-/* Memory Match Specific */
 #memory-board {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 10px;
-    width: 500px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 420px;
     margin: 20px auto;
-    padding: 10px;
-    background-color: var(--card-bg);
+}
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: var(--secondary-color);
     border-radius: 8px;
-    perspective: 1000px; 
-}
-#memory-board.win {
-    box-shadow: 0 0 20px 5px #55ff55;
-}
-.memory-card {
-    height: 90px;
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2em;
     cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    user-select: none;
-    color: var(--sidebar-bg);
+    transition: transform 0.3s;
+    color: #1e1e1e;
     font-weight: bold;
 }
-.memory-card.flipped {
-    background-color: #333;
-    color: var(--text-color);
-    transform: rotateY(180deg);
+.card.flipped {
+    background-color: var(--highlight-color);
 }
-.memory-card.matched {
+.card.matched {
     background-color: #28a745;
-    color: white;
     cursor: default;
 }
 
-
-/* -------------------- MODALS (Popups) -------------------- */
+/* Modal Popups (Common Style) */
 .hidden {
     display: none !important;
 }
@@ -475,158 +397,93 @@ p.description {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95); 
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    overflow-y: auto; 
-}
-
-/* Article Modal Full Screen Style */
-#modal-overlay.full-screen #modal-popup {
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    border-radius: 0;
-    padding: 50px 10%; 
-    background-color: var(--bg-color); 
 }
 
 #modal-popup, #formula-modal-popup, #occasion-modal-popup {
-    background-color: var(--card-bg);
-    padding: 30px;
+    background-color: #1f1f1f;
+    padding: 20px;
     border-radius: 10px;
-    max-width: 800px;
     width: 90%;
-    max-height: 90vh;
+    max-width: 800px;
+    max-height: 90%;
     overflow-y: auto;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 #modal-header, .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--hover-color);
+    border-bottom: 1px solid #333;
     padding-bottom: 10px;
-    position: sticky;
-    top: -30px; 
-    background-color: var(--bg-color); 
-    z-index: 10;
-}
-#modal-overlay.full-screen #modal-header {
-    top: 0; 
-    background-color: var(--bg-color); 
-    padding-top: 20px;
-}
-
-#modal-title, #formula-modal-title, #occasion-modal-title {
-    color: var(--primary-color);
-    font-size: 1.8em;
+    margin-bottom: 15px;
 }
 
 #modal-close, .modal-close {
     background: none;
     border: none;
-    color: var(--text-muted);
-    font-size: 2em;
+    color: white;
+    font-size: 1.5em;
     cursor: pointer;
-    transition: color 0.2s;
 }
 
-#modal-close:hover, .modal-close:hover {
-    color: var(--primary-color);
+#modal-content, #formula-modal-content, #occasion-modal-content {
+    padding-bottom: 15px;
 }
 
-/* Modal Content Styling (for articles/pages) */
-#modal-content h3 {
-    color: var(--text-color);
-    margin-top: 20px;
-    border-left: 3px solid var(--primary-color);
-    padding-left: 10px;
+#modal-footer, .modal-footer {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    text-align: right;
 }
 
-#modal-content p {
-    line-height: 1.6;
-    margin: 15px 0;
-}
-
-#modal-content ul, #modal-content ol {
-    margin: 15px 0 15px 40px;
-}
-
-#modal-content code {
-    background-color: var(--sidebar-bg);
-    padding: 2px 5px;
-    border-radius: 3px;
-    color: #f7e07a;
-}
-
-#modal-footer {
-    text-align: center;
-    margin-top: 30px;
-}
-#modal-overlay.full-screen #modal-footer {
-     position: sticky;
-     bottom: 0;
-     background-color: var(--bg-color);
-     padding-bottom: 20px;
-     z-index: 10;
-}
-
-
-#modal-back {
-    padding: 10px 20px;
-    background-color: #ff5555; 
-    color: var(--sidebar-bg);
+#modal-back, #copy-formula-btn, .modal-footer button {
+    background-color: var(--secondary-color);
+    color: white;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    margin-left: 10px;
 }
 
-/* Formula Modal Specific */
-#formula-modal-content strong {
-    color: var(--primary-color);
+#modal-back:hover, .modal-footer button:hover {
+    opacity: 0.8;
 }
-.modal-footer button {
-    padding: 8px 15px;
-    margin: 0 5px;
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
-    transition: opacity 0.2s;
-}
+
 #copy-formula-btn {
-    background-color: #28a745; 
-    color: white;
+    background-color: #28a745; 
+    color: white;
 }
 #copy-formula-btn:hover {
-    opacity: 0.8;
+    opacity: 0.8;
 }
-/* === MOBILE LAYOUT OPTIMIZED FIX === */
+
+/* === MOBILE LAYOUT OPTIMIZED FIX (Max Width 600px) === */
 @media screen and (max-width: 600px) {
     /* CRITICAL FIX 1: Forces the body to stack items vertically and handles overflow */
     body {
-        display: block !important; 
+        display: block !important; /* Overrides desktop flex */
         overflow-x: hidden !important; 
     }
 
     /* CRITICAL FIX 2: Removes sticky/fixed positioning and overlap */
     .sidebar {
-        position: relative !important;
-        top: auto !important; 
+        position: relative !important; /* Removes sticky */
+        top: auto !important; /* Removes fixed top position */
         width: 100% !important;
         min-width: 100% !important;
         height: auto !important;
         display: flex !important;
         flex-direction: column !important; 
-        order: 1 !important; 
+        order: 1 !important; /* Menu appears first */
         padding: 10px 5px;
-        box-shadow: none !important; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) !important; 
         z-index: 10;
     }
 
@@ -643,6 +500,7 @@ p.description {
         display: block !important;
         width: 100% !important;
         min-width: 100% !important;
+        max-width: 100% !important; /* Ensures it takes all available width */
         order: 2 !important; 
         padding: 15px;
         margin-top: 0 !important; 
@@ -650,9 +508,9 @@ p.description {
     
     /* Menu items to display nicely */
     .menu {
-        flex-direction: row !important;
+        flex-direction: row !important; /* Items in a row */
         flex-wrap: wrap !important;
-        justify-content: center;
+        justify-content: space-around;
         margin-top: 10px;
     }
 
@@ -660,7 +518,8 @@ p.description {
         flex-grow: 1; 
         text-align: center;
         margin: 5px;
-        padding: 8px 10px;
+        padding: 8px 5px; /* Smaller padding for mobile */
+        font-size: 0.9em;
     }
     
     /* Hide the clock on mobile for cleanliness */
@@ -668,7 +527,11 @@ p.description {
         display: none !important;
     }
 
-    /* Article Grid fix */
+    /* Game and Article Grid fixes */
+    #tictactoe-board, #memory-board {
+        width: 100% !important;
+    }
+
     .article-grid {
         display: block !important;
         width: 100% !important;
