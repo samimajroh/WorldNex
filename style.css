@@ -601,51 +601,51 @@ p.description {
     transition: opacity 0.2s;
 }
 #copy-formula-btn {
-    background-color: #28a745; 
-    color: white;
+    background-color: #28a745; 
+    color: white;
 }
 #copy-formula-btn:hover {
-    opacity: 0.8;
-    }
+    opacity: 0.8;
 }
+
 /* === MOBILE LAYOUT OVERRIDE FIX === */
 @media screen and (max-width: 600px) {
-    /* Container ko vertical stack karein */
-    .container {
-        flex-direction: column !important;
-        width: 100% !important;
-        padding: 0;
-        margin: 0;
-    }
-    
-    /* Menu/Sidebar ko display karein */
-    .sidebar, .nav-menu {
-        width: 100% !important;
-        min-width: 100% !important;
-        height: auto !important;
-        display: flex !important;
-        flex-wrap: wrap !important;
-        order: 1 !important;
-        padding: 10px 5px;
-        box-sizing: border-box;
-    }
-    
-    /* Content ko force karein ke woh poori screen le aur Menu ke neeche aaye */
-    .content, .main-section {
-        display: block !important;
-        width: 100% !important;
-        min-width: 100% !important;
-        order: 2 !important;
-        padding: 15px;
-    }
-    
-    /* Article Grid ko theek karein */
-    .article-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    .article-card {
-        width: 95% !important;
-        margin: 10px auto !important;
-    }
+    /* Container must stack vertically */
+    .container {
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Menu/Sidebar must take full width */
+    .sidebar, .nav-menu {
+        width: 100% !important;
+        min-width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        order: 1 !important;
+        padding: 10px 5px;
+        box-sizing: border-box;
+    }
+    
+    /* Content must take full width and appear below the menu */
+    .content, .main-section {
+        display: block !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        order: 2 !important;
+        padding: 15px;
+    }
+    
+    /* Article Grid fix */
+    .article-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+    .article-card {
+        width: 95% !important;
+        margin: 10px auto !important;
+    }
 }
