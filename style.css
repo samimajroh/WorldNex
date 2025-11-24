@@ -612,20 +612,22 @@ p.description {
     /* CRITICAL FIX 1: Forces the body to stack items vertically and handles overflow */
     body {
         display: block !important;
-        overflow-x: hidden !important; /* Prevents horizontal scrolling */
+        overflow-x: hidden !important; 
     }
 
     /* CRITICAL FIX 2: Removes sticky/fixed positioning from the sidebar */
     .sidebar {
-        position: relative !important; /* Removes 'sticky' property */
+        position: relative !important;
+        top: auto !important; /* CRITICAL FIX: Ensures it's not fixed to the top */
         width: 100% !important;
         min-width: 100% !important;
         height: auto !important;
         display: flex !important;
-        flex-wrap: wrap !important;
-        order: 1 !important; /* Menu will appear first */
+        flex-direction: column !important; 
+        order: 1 !important; 
         padding: 10px 5px;
-        box-shadow: none !important; /* Optional: Makes it look cleaner on mobile */
+        box-shadow: none !important; 
+        z-index: 10;
     }
 
     /* Container must stack vertically */
@@ -637,12 +639,13 @@ p.description {
     }
     
     /* Content must take full width and appear below the menu */
-    .main-content { /* Changed from .content, .main-section to match your HTML */
+    .main-content { 
         display: block !important;
         width: 100% !important;
         min-width: 100% !important;
         order: 2 !important;
         padding: 15px;
+        margin-top: 0 !important; /* Ensures no extra top margin */
     }
     
     /* Menu items to display nicely */
@@ -657,6 +660,7 @@ p.description {
         flex-grow: 1; /* Helps items fill space */
         text-align: center;
         margin: 5px;
+        padding: 8px 10px; /* Smaller padding for mobile */
     }
     
     /* Hide the clock on mobile for cleanliness */
