@@ -607,18 +607,18 @@ p.description {
 #copy-formula-btn:hover {
     opacity: 0.8;
 }
-/* === MOBILE LAYOUT OVERRIDE FIX === */
+/* === MOBILE LAYOUT OPTIMIZED FIX === */
 @media screen and (max-width: 600px) {
     /* CRITICAL FIX 1: Forces the body to stack items vertically and handles overflow */
     body {
-        display: block !important;
+        display: block !important; 
         overflow-x: hidden !important; 
     }
 
-    /* CRITICAL FIX 2: Removes sticky/fixed positioning from the sidebar */
+    /* CRITICAL FIX 2: Removes sticky/fixed positioning and overlap */
     .sidebar {
         position: relative !important;
-        top: auto !important; /* CRITICAL FIX: Ensures it's not fixed to the top */
+        top: auto !important; 
         width: 100% !important;
         min-width: 100% !important;
         height: auto !important;
@@ -632,35 +632,35 @@ p.description {
 
     /* Container must stack vertically */
     .container {
-        flex-direction: column !important;
-        width: 100% !important;
-        padding: 0;
-        margin: 0;
-    }
-    
-    /* Content must take full width and appear below the menu */
-    .main-content { 
-        display: block !important;
-        width: 100% !important;
-        min-width: 100% !important;
-        order: 2 !important;
-        padding: 15px;
-        margin-top: 0 !important; /* Ensures no extra top margin */
-    }
-    
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Content must take full width and appear below the menu */
+    .main-content { 
+        display: block !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        order: 2 !important; 
+        padding: 15px;
+        margin-top: 0 !important; 
+    }
+    
     /* Menu items to display nicely */
     .menu {
-        flex-direction: row !important; /* Items in a row */
+        flex-direction: row !important;
         flex-wrap: wrap !important;
         justify-content: center;
         margin-top: 10px;
     }
 
     .menu-item {
-        flex-grow: 1; /* Helps items fill space */
+        flex-grow: 1; 
         text-align: center;
         margin: 5px;
-        padding: 8px 10px; /* Smaller padding for mobile */
+        padding: 8px 10px;
     }
     
     /* Hide the clock on mobile for cleanliness */
@@ -668,13 +668,13 @@ p.description {
         display: none !important;
     }
 
-    /* Article Grid fix */
-    .article-grid {
-        display: block !important;
-        width: 100% !important;
-    }
-    .article-card {
-        width: 95% !important;
-        margin: 10px auto !important;
-    }
+    /* Article Grid fix */
+    .article-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+    .article-card {
+        width: 95% !important;
+        margin: 10px auto !important;
+    }
 }
