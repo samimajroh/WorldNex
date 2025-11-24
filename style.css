@@ -607,11 +607,15 @@ p.description {
 #copy-formula-btn:hover {
     opacity: 0.8;
 }
-
 /* === MOBILE LAYOUT OVERRIDE FIX === */
 @media screen and (max-width: 600px) {
-    /* Container must stack vertically */
-    .container {
+    /* CRITICAL FIX: Forces the body to stack items vertically instead of side-by-side */
+    body {
+        display: block !important;
+    }
+    
+    /* Container must stack vertically */
+    .container {
         flex-direction: column !important;
         width: 100% !important;
         padding: 0;
